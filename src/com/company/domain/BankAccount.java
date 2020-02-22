@@ -4,22 +4,22 @@ import java.math.BigDecimal;
 
 public class BankAccount {
 
-    private String accountNo;
+    private String id;
     private String currency;
     private BigDecimal balance;
 
-    public BankAccount(String accountNo, String currency, BigDecimal balance) {
-        this.accountNo = accountNo;
+    public BankAccount(String id, String currency, BigDecimal balance) {
+        this.id = id;
         this.currency = currency;
         this.balance = balance;
     }
 
-    public String getAccountNo() {
-        return accountNo;
+    public String getId() {
+        return id;
     }
 
-    public void setAccountNo(String accountNo) {
-        this.accountNo = accountNo;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getCurrency() {
@@ -40,7 +40,7 @@ public class BankAccount {
 
     @Override
     public String toString() {
-        return  "Számlaszám: " + accountNo + '\n' +
+        return  "Számlaszám: " + id + '\n' +
                 "Pénznem: " + currency + '\n' +
                 "Egyenleg: " + balance;
     }

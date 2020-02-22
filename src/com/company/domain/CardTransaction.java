@@ -4,24 +4,24 @@ import java.math.BigDecimal;
 
 public class CardTransaction {
 
-    private String accountNo;
+    private String accountId;
     private String currency;
     private BigDecimal amount;
     private BigDecimal currencyRate;
 
-    public CardTransaction(String accountNo, String currency, BigDecimal amount, BigDecimal currencyRate) {
-        this.accountNo = accountNo;
+    public CardTransaction(String accountId, String currency, BigDecimal amount, BigDecimal currencyRate) {
+        this.accountId = accountId;
         this.currency = currency;
         this.amount = amount;
         this.currencyRate = currencyRate;
     }
 
-    public String getAccountNo() {
-        return accountNo;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setAccountNo(String accountNo) {
-        this.accountNo = accountNo;
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
     }
 
     public String getCurrency() {
@@ -50,7 +50,7 @@ public class CardTransaction {
 
     @Override
     public String toString() {
-        return  "Számlaszám: " + accountNo + '\n' +
+        return  "Számlaszám: " + accountId + '\n' +
                 "Pénznem: " + currency + '\n' +
                 "Összeg: " + amount + '\n' +
                 "Valutaárfolyam: " + currencyRate;
