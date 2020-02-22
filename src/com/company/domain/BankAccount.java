@@ -1,6 +1,7 @@
 package com.company.domain;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class BankAccount {
 
@@ -42,6 +43,6 @@ public class BankAccount {
     public String toString() {
         return  "Számlaszám: " + id + '\n' +
                 "Pénznem: " + currency + '\n' +
-                "Egyenleg: " + balance;
+                "Egyenleg: " + balance.setScale(2, RoundingMode.CEILING);
     }
 }

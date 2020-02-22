@@ -1,6 +1,7 @@
 package com.company.domain;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class CardTransaction {
 
@@ -9,11 +10,7 @@ public class CardTransaction {
     private BigDecimal amount;
     private BigDecimal currencyRate;
 
-    public CardTransaction(String accountId, String currency, BigDecimal amount, BigDecimal currencyRate) {
-        this.accountId = accountId;
-        this.currency = currency;
-        this.amount = amount;
-        this.currencyRate = currencyRate;
+    public CardTransaction() {
     }
 
     public String getAccountId() {
@@ -52,7 +49,7 @@ public class CardTransaction {
     public String toString() {
         return  "Számlaszám: " + accountId + '\n' +
                 "Pénznem: " + currency + '\n' +
-                "Összeg: " + amount + '\n' +
-                "Valutaárfolyam: " + currencyRate;
+                "Összeg: " + amount.setScale(2, RoundingMode.CEILING) + '\n' +
+                "Valutaárfolyam: " + currencyRate.setScale(2, RoundingMode.CEILING);
     }
 }
