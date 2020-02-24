@@ -29,10 +29,15 @@ public class BankAccountService {
         return HISTORY.size();
     }
 
+    public void logWarning(String id) {
+        LOG.warning("Nem létezik ilyen számlaszám: " + id);
+    }
+
     public void processTransaction(CardTransaction transaction) {
+
         Optional<BankAccount> account = getBankAccountById(transaction.getAccountId());
         if (!account.isPresent()) {
-            LOG.warning("Nem létezik ilyen számlaszám: " + transaction.getAccountId());
+            logWarning(transaction.getAccountId());
         } else {
             BankAccount bankAccount = account.get();
             BigDecimal convertedAmount = transaction.getAmount();

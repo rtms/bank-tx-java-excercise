@@ -13,6 +13,13 @@ public class CardTransaction {
     public CardTransaction() {
     }
 
+    public CardTransaction(String accountId, String currency, BigDecimal amount, BigDecimal currencyRate) {
+        this.accountId = accountId;
+        this.currency = currency;
+        this.amount = amount;
+        this.currencyRate = currencyRate;
+    }
+
     public String getAccountId() {
         return accountId;
     }
@@ -50,6 +57,6 @@ public class CardTransaction {
         return  "Számlaszám: " + accountId + '\n' +
                 "Pénznem: " + currency + '\n' +
                 "Összeg: " + amount.setScale(2, RoundingMode.CEILING) + '\n' +
-                "Valutaárfolyam: " + currencyRate.setScale(2, RoundingMode.CEILING);
+                "Valutaárfolyam: " + (currencyRate.equals(null) ? " - " : currencyRate.setScale(2, RoundingMode.CEILING));
     }
 }
